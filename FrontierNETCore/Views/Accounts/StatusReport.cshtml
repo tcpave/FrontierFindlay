@@ -1,0 +1,56 @@
+﻿@model IEnumerable<FrontierNETCore.Models.AccountDto>
+
+@{
+    Layout = "~/Views/Shared/_Frontier.cshtml";
+}
+
+<section class="account-column grid" id="active-account-column">
+    <div class="account-container-title" id="active-account-container-title">
+        <h3>Active</h3>
+    </div>
+    <div class="account-container active-account">
+
+        @foreach (var account in Model)
+        {
+            @if (account.AccountStatusId == FrontierNETCore.Code.AccountStatus.Active)
+            {
+                <partial name="AccountsPartialView" model="account" />
+            }
+        }
+
+    </div>
+</section>
+
+<section class="account-column grid" id="overdue-account-column">
+    <div class="account-container-title" id="overdue-account-container-title">
+        <h3>Overdue</h3>
+    </div>
+    <div class="account-container overdue-account">
+
+        @foreach (var account in Model)
+        {
+            @if (account.AccountStatusId == FrontierNETCore.Code.AccountStatus.Overdue)
+            {
+                <partial name="AccountsPartialView" model="account" />
+            }
+        }
+
+    </div>
+</section>
+
+<section class="account-column grid" id="inactive-account-column">
+    <div class="account-container-title" id="inactive-account-container-title">
+        <h3>Inactive</h3>
+    </div>
+    <div class="account-container inactive-account">
+
+        @foreach (var account in Model)
+        {
+            @if (account.AccountStatusId == FrontierNETCore.Code.AccountStatus.Inactive)
+            {
+                <partial name="AccountsPartialView" model="account" />
+            }
+        }
+
+    </div>
+</section>

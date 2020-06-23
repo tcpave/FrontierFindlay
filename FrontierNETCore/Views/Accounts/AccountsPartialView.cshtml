@@ -1,0 +1,23 @@
+﻿@model FrontierNETCore.Models.AccountDto
+
+<ul class="account-data-list">
+    <li><label>Name:</label>@Model.Name</li>
+    <li><label>Email:</label>@Model.Email</li>
+    <li>
+        <label>Phone Number:</label>
+        @if (Model.PhoneNumber > 0)
+        {@Model.PhoneNumber.ToString("(###) ###-####")}
+    </li>
+
+    <li><label>Amount Due:</label>@String.Format("{0:C2}", Model.AmountDue)</li>
+
+    @if (Model.PaymentDueDate.HasValue)
+    {
+        <li>
+            <label>Due Date:</label>
+            @String.Format("{0:MM/dd/yyyy}", Model.PaymentDueDate)
+        </li>
+    }
+</ul>
+<br />
+

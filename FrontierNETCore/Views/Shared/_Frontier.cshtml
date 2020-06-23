@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Accounts Coding Test</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" type="text/css" href="~/css/frontier.css">
+</head>
+<body>
+    <section>
+        <header class="grid">
+            <div class="title-container">
+                <h1>Coding Test</h1>
+            </div>
+        </header>
+        <main class="grid" id="home-content">
+            <div class="content-title-container">
+                <h2>Accounts</h2>
+            </div>
+            <section class="grid" id="account-grid">
+                @RenderBody()
+            </section>
+        </main>
+
+        <footer class="grid">
+            <p class="copy">
+                &copy;
+                <script>document.write(new Date().getFullYear())</script>
+            </p>
+        </footer>
+    </section>
+</body>
+</html>
